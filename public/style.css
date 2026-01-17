@@ -1,0 +1,245 @@
+/* ===============================
+   전체 설정
+=============================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #333;
+    transition: background 0.3s;
+}
+
+/* ===============================
+   검색창
+=============================== */
+.search-bar {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 10px 15px;
+    width: 250px;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #7f9cf5;
+    box-shadow: 0 0 5px rgba(127, 156, 245, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #7f9cf5;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #667eea;
+    transform: scale(1.05);
+}
+
+/* ===============================
+   카테고리
+=============================== */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   카드
+=============================== */
+
+#cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   하트 아이콘
+=============================== */
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #f56565;
+    transition: 0.2s;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+}
+
+/* ===============================
+   모달
+=============================== */
+.modal {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: popin 0.3s ease;
+}
+
+@keyframes popin {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #666;
+    transition: 0.2s;
+}
+
+.close:hover {
+    color: #f56565;
+    transform: scale(1.2);
+}
+/* ===============================
+   + 버튼 스타일
+=============================== */
+.add-btn {
+    background-color: #48bb78;
+    font-size: 18px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background-color: #38a169;
+}
+
+/* ===============================
+   제품 추가 모달 폼
+=============================== */
+.add-product-modal {
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.add-product-modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #7f9cf5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(127, 156, 245, 0.5);
+}
+
+.store-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.store-input-group select {
+    flex: 1.2;
+}
+
+.store-input-group input {
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #7f9cf5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #667eea;
+    transform: scale(1.02);
+}

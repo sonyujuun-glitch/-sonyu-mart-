@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>제품 검색</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="search-bar">
+    <button id="addBtn" class="add-btn" onclick="openAddModal()">➕</button>
+    <input id="searchInput" placeholder="검색 할 제품 입력" />
+    <button onclick="search()">🔍</button>
+  </div>
+  
+  <div class="filters">
+    <select id="storeSelect">
+      <option value="전체">🏪 전체 매장</option>
+      <option value="Walmart">Walmart</option>
+      <option value="Hannam">Hannam Mart</option>
+      <option value="Rexall">Rexall</option>
+      <option value="Dollarama">Dollarama</option>
+      <option value="Costco">Costco</option>
+    </select>
+
+    <select id="categorySelect">
+      <option value="전체">📦 전체 상품</option>
+      <option value="고기류">🥩 고기류</option>
+      <option value="채소류">🥬 채소류</option>
+      <option value="유제품">🥛 유제품</option>
+      <option value="주스">🧃 주스/음료</option>
+      <option value="기타">기타</option>
+    </select>
+  </div>
+  
+
+  <div id="cardContainer"></div>
+
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">✕</button>
+      <div class="detail-text">
+        <h2 id="detailName"></h2>
+        <p id="detailDesc"></p>
+      </div>
+      <div class="detail-image">이미지</div>
+    </div>
+  </div>
+
+  <div id="addProductModal" class="modal hidden">
+    <div class="modal-content add-product-modal">
+      <button class="close" onclick="closeAddModal()">✕</button>
+      <h2>새로운 제품 추가</h2>
+      <div class="form-group">
+        <label>매장명:</label>
+        <div class="store-input-group">
+          <select id="storeInput">
+            <option value="">-- 매장 선택 또는 새로 입력 --</option>
+          </select>
+          <input id="newStoreName" type="text" placeholder="새로운 매장 이름 (선택사항)" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>제품명:</label>
+        <input id="productNameInput" type="text" placeholder="제품명 입력" />
+      </div>
+      <div class="form-group">
+        <label>무게/단위:</label>
+        <input id="productUnitInput" type="text" placeholder="예: 500ML, 1KG" />
+      </div>
+      <div class="form-group">
+        <label>가격:</label>
+        <input id="productPriceInput" type="number" step="0.01" placeholder="가격 입력" />
+      </div>
+      <button class="submit-btn" onclick="addProduct()">추가</button>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    console.log(DATA); // undefined 아니고 DATA 객체 나와야 함
+  </script>
+</body>
+</html>
+
+
+
+
