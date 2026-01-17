@@ -1,0 +1,14 @@
+{
+  "name": "sonyu mart",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "googleapis": "^121.0.0"
+  }
+}
